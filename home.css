@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@400;500&display=swap');
+
 /* ============================================
    VARIABLES Y COLORES
    ============================================ */
@@ -16,6 +18,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html, body {
@@ -51,13 +55,16 @@ html, body {
 }
 
 .logo-image {
-    width: 48px;
-    height: 48px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 3px solid #c8102e;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 8px 24px rgba(200, 16, 46, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
 }
 
 .logo-image img {
@@ -68,14 +75,27 @@ html, body {
 }
 
 .logo-text h1 {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.2;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.03em;
 }
 
 .logo-text p {
-    font-size: 12px;
-    opacity: 0.8;
+    font-size: 13px;
+    opacity: 1;
+    color: #c8102e;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.logo-image:hover {
+    border-color: #ff6b7a;
+    box-shadow: 0 12px 32px rgba(200, 16, 46, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
 }
 
 .sidebar-nav {
@@ -95,18 +115,22 @@ html, body {
     border-radius: 8px;
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
-    transition: all 0.2s;
+    transition: all 0.3s ease;
     font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.02em;
 }
 
 .nav-link:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.12);
     color: white;
+    transform: translateX(4px);
 }
 
 .nav-link.active {
     background: var(--secondary-color);
     color: white;
+    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.3);
 }
 
 .sidebar-divider {
@@ -161,11 +185,17 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s;
+    transition: all 0.3s ease;
 }
 
 .logout-btn:hover {
     background: var(--secondary-color);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.4);
+}
+
+.logout-btn:active {
+    transform: scale(0.95);
 }
 
 .main-content {
@@ -278,15 +308,19 @@ html, body {
 
 .page-title {
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--text-dark);
     margin: 0 0 8px 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.01em;
 }
 
 .page-subtitle {
     font-size: 14px;
     color: var(--text-muted);
     margin: 0;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.02em;
 }
 
 .stats-grid {
@@ -301,12 +335,13 @@ html, body {
     border-radius: 12px;
     padding: 24px;
     border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .stat-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: var(--secondary-color);
 }
 
 .card-header {
@@ -317,10 +352,13 @@ html, body {
 }
 
 .card-title {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 700;
     color: var(--text-muted);
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 .card-icon {
@@ -355,10 +393,12 @@ html, body {
 }
 
 .card-value {
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 36px;
+    font-weight: 800;
     color: var(--text-dark);
     margin: 0 0 4px 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.02em;
 }
 
 .card-label {
@@ -475,28 +515,35 @@ html, body {
 }
 
 .section-title {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
     color: var(--text-dark);
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.01em;
 }
 
 .section-subtitle {
     font-size: 12px;
     color: var(--text-muted);
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.04em;
 }
 
 .view-all-link {
     font-size: 13px;
     color: var(--primary-color);
     text-decoration: none;
-    font-weight: 500;
-    transition: all 0.2s;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.02em;
 }
 
 .view-all-link:hover {
     color: var(--secondary-color);
+    transform: translateX(2px);
 }
 
 /* ============================================
@@ -586,12 +633,13 @@ html, body {
     align-items: center;
     text-align: center;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .event:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .event-blue {
@@ -615,8 +663,9 @@ html, body {
 }
 
 .event-title {
-    font-weight: 600;
+    font-weight: 700;
     margin: 0;
+    letter-spacing: 0.02em;
 }
 
 .event-time {
@@ -652,12 +701,15 @@ html, body {
     padding: 16px;
     background: var(--bg-light);
     border-radius: 8px;
-    transition: all 0.2s;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .grade-item:hover {
-    background: #e5eaf2;
-    transform: translateY(-2px);
+    background: var(--bg-white);
+    transform: translateY(-4px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
 }
 
 .grade-header {
@@ -668,9 +720,11 @@ html, body {
 
 .grade-name {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-dark);
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.02em;
 }
 
 .grade-value {
@@ -711,26 +765,34 @@ html, body {
     border-radius: 8px;
     text-decoration: none;
     color: var(--text-dark);
-    transition: all 0.2s;
+    transition: all 0.3s ease;
     border: 1px solid var(--border-color);
 }
 
 .quick-access-item:hover {
     background: var(--bg-white);
-    border-color: var(--primary-color);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-color: var(--secondary-color);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(200, 16, 46, 0.15);
 }
 
 .quick-access-item i {
     font-size: 24px;
     color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.quick-access-item:hover i {
+    color: var(--secondary-color);
+    transform: scale(1.15);
 }
 
 .quick-access-item span {
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.02em;
 }
 
 /* ============================================
@@ -755,9 +817,11 @@ html, body {
 
 .widget-title {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-dark);
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.01em;
 }
 
 /* ============================================
@@ -778,17 +842,21 @@ html, body {
     font-size: 14px;
     padding: 4px 8px;
     border-radius: 4px;
-    transition: all 0.2s;
+    transition: all 0.3s ease;
 }
 
 .month-nav:hover {
     background: var(--bg-light);
+    color: var(--secondary-color);
+    transform: scale(1.2);
 }
 
 .month-name {
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.02em;
 }
 
 .calendar-grid {
@@ -812,11 +880,12 @@ html, body {
     justify-content: center;
     border-radius: 6px;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-dark);
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.3s ease;
     background: var(--bg-light);
+    font-family: 'Montserrat', sans-serif;
 }
 
 .calendar-day.empty {
@@ -828,17 +897,20 @@ html, body {
     background: linear-gradient(135deg, #6d5df6 0%, #8b5cf6 100%);
     color: white;
     font-weight: 700;
+    box-shadow: 0 4px 12px rgba(109, 93, 246, 0.3);
 }
 
 .calendar-day.highlight {
     background: rgba(200, 16, 46, 0.1);
     color: var(--secondary-color);
-    font-weight: 600;
+    font-weight: 700;
+    border: 1px solid var(--secondary-color);
 }
 
 .calendar-day:not(.empty):hover {
-    transform: scale(1.1);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    background: var(--bg-white);
 }
 
 /* ============================================
@@ -856,13 +928,16 @@ html, body {
     padding: 12px;
     border-radius: 8px;
     background: var(--bg-light);
-    transition: all 0.2s;
+    transition: all 0.3s ease;
     cursor: pointer;
+    border: 1px solid transparent;
 }
 
 .activity-item:hover {
-    background: #e5eaf2;
-    transform: translateX(4px);
+    background: var(--bg-white);
+    transform: translateX(6px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.1);
 }
 
 .activity-icon {
@@ -898,24 +973,31 @@ html, body {
 
 .activity-title {
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-dark);
     margin: 0 0 4px 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.02em;
 }
 
 .activity-course {
-    font-size: 11px;
+    font-size: 10px;
     color: var(--text-muted);
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
 }
 
 .activity-date {
     font-size: 10px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--secondary-color);
     display: flex;
     align-items: center;
     white-space: nowrap;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.04em;
 }
 
 /* ============================================
@@ -928,7 +1010,14 @@ html, body {
     background: var(--bg-light);
     border-radius: 8px;
     margin-bottom: 12px;
-    border-left: 3px solid var(--primary-color);
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.notice-item:hover {
+    background: var(--bg-white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateX(4px);
 }
 
 .notice-item.warning {
@@ -951,6 +1040,8 @@ html, body {
     color: var(--text-muted);
     margin: 0;
     line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.01em;
 }
 
 /* ============================================

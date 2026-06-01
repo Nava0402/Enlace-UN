@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn.style.opacity = "1";
                 btn.style.cursor = "pointer";
                 
-                // Redirección (descomentar cuando tengas la página de destino)
-                // window.location.href = "dashboard.html"; 
+                // Redirige a la página de inicio del estudiante
+                window.location.href = "home.html"; 
                 
             }, 1500); 
         });
