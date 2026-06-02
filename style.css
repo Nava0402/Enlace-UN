@@ -25,8 +25,10 @@
 
 /* NAV */
 .nav{background:#162348;display:flex;align-items:stretch;padding:0 24px;border-bottom:3px solid #c8102e;gap:2px}
-.nav-btn{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.5);padding:10px 12px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-3px;transition:all 0.2s;white-space:nowrap}
+.nav-btn{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.5);padding:10px 12px;cursor:pointer;border:none;border-bottom:3px solid transparent;margin-bottom:-3px;transition:all 0.2s;white-space:nowrap;background:transparent}
 .nav-btn:hover{color:rgba(255,255,255,0.85);background:rgba(255,255,255,0.05)}
+
+
 .nav-btn.active{color:#fff;border-bottom-color:#c8102e}
 
 /* ANNOUNCEMENT */
@@ -261,6 +263,11 @@
 
 .back-btn-wrap {
     margin-bottom: 25px;
+}
+
+.back-btn-wrap a {
+    text-decoration: none;
+    display: block;
 }
 
 .sidebar-box {
