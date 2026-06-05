@@ -47,11 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 // Mensaje dinámico dependiendo de si usó la contraseña por defecto o una personalizada
                 if (password === passwordPorDefecto) {
-                    alert(`¡Bienvenido al sistema ENLACE!\n\nIngresaste con la contraseña por defecto de la matrícula: ${matricula}`);
-                } else {
-                    alert(`¡Bienvenido al sistema ENLACE!\n\nIngresaste exitosamente con tu contraseña personalizada.`);
+                    alert(`¡Bienvenido al sistema ENLACE!\n\n ${username}`);
                 }
-                
                 // Restaura el botón a su estado normal
                 btn.innerHTML = btnOriginalText;
                 btn.style.opacity = "1";

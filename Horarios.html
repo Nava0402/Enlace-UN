@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horarios - Universidad del Norte</title>
+    <title>Horarios</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="home.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -12,10 +12,14 @@
         /* Estilos adicionales para la página de horarios */
         .page-container {
             padding: 24px 24px 32px 20px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
         }
 
         .page-header {
-            margin-bottom: 20px;
+            margin-bottom: 8px;
+            width: 100%;
         }
 
         .page-title {
@@ -24,32 +28,76 @@
 
         .content-wrapper {
             display: flex;
-            gap: 20px;
-            align-items: flex-start;
+            flex-direction: column;
+            gap: 0;
+            align-items: stretch;
+            max-width: none;
+            margin: 0;
+            width: 100%;
         }
 
         .info-cards {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             gap: 12px;
-            margin-bottom: 0;
-            flex-shrink: 0;
-            width: 200px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            width: 100%;
+            align-content: flex-start;
         }
 
-        .schedule-wrapper {
+        .info-card {
             background: var(--bg-white);
+            padding: 12px;
             border-radius: 12px;
-            padding: 24px;
             border: 1px solid var(--border-color);
-            margin-bottom: 0;
-            flex: 1;
+            transition: all 0.3s ease;
+            flex: 0 0 220px;
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-card-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .info-card-icon.primary {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0f1f3f 100%);
+        }
+
+        .info-card-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin: 0 0 4px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .info-card-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .schedule-controls {
             display: flex;
             gap: 16px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             flex-wrap: wrap;
             align-items: center;
         }
@@ -57,7 +105,7 @@
         .control-group {
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 4px;
         }
 
         .control-label {
@@ -70,16 +118,16 @@
         }
 
         .control-select {
-            padding: 10px 14px;
+            padding: 8px 12px;
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 14px;
+            border-radius: 6px;
+            font-size: 13px;
             color: var(--text-dark);
             background: var(--bg-white);
             cursor: pointer;
             transition: all 0.2s;
             font-family: 'Inter', sans-serif;
-            min-width: 200px;
+            min-width: 160px;
         }
 
         .control-select:hover {
@@ -91,6 +139,14 @@
             outline: none;
             border-color: var(--primary-color);
             box-shadow: 0 0 0 3px rgba(27, 45, 91, 0.12);
+        }
+
+        .schedule-wrapper {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            width: 100%;
         }
 
         .schedule-table-container {
@@ -223,53 +279,6 @@
             font-family: 'Inter', sans-serif;
         }
 
-        .info-card {
-            background: var(--bg-white);
-            padding: 18px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .info-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-        }
-
-        .info-card-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: white;
-        }
-
-        .info-card-icon.primary {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #0f1f3f 100%);
-        }
-
-        .info-card-title {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--text-muted);
-            margin: 0 0 6px 0;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .info-card-value {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-        }
-
         @media (max-width: 768px) {
             .content-wrapper {
                 flex-direction: column;
@@ -328,19 +337,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="Horarios.html" class="nav-link active">
+                    <a href="horarios.html" class="nav-link active">
                         <i class="fas fa-calendar-alt"></i>
                         <span>Horarios</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">
+                    <a href="calificaciones.html" class="nav-link">
                         <i class="fas fa-star"></i>
                         <span>Calificaciones</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">
+                    <a href="kardex.html" class="nav-link">
                         <i class="fas fa-book"></i>
                         <span>Kardex</span>
                     </a>
@@ -423,43 +432,43 @@
                 <p class="page-subtitle"></p>
             </div>
 
+            <!-- INFO CARDS -->
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon primary">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h4 class="info-card-title">Créditos</h4>
+                    <p class="info-card-value">18</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon primary">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4 class="info-card-title">Horas Semanales</h4>
+                    <p class="info-card-value">24</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon primary">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4 class="info-card-title">Asignaturas</h4>
+                    <p class="info-card-value">6</p>
+                </div>
+            </div>
+
             <!-- CONTENT WRAPPER -->
             <div class="content-wrapper">
-                <!-- INFO CARDS -->
-                <div class="info-cards">
-                    <div class="info-card">
-                        <div class="info-card-icon primary">
-                            <i class="fas fa-book-open"></i>
-                        </div>
-                        <h4 class="info-card-title">Créditos</h4>
-                        <p class="info-card-value">18</p>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-card-icon primary">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h4 class="info-card-title">Horas Semanales</h4>
-                        <p class="info-card-value">24</p>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-card-icon primary">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h4 class="info-card-title">Asignaturas</h4>
-                        <p class="info-card-value">6</p>
-                    </div>
-                </div>
-
-            <!-- SCHEDULE WRAPPER -->
-            <div class="schedule-wrapper">
+                <!-- SCHEDULE WRAPPER -->
+                <div class="schedule-wrapper">
                 <!-- CONTROLS -->
                 <div class="schedule-controls">
                     <div class="control-group">
-                        <label class="control-label">Semestre</label>
+                        <label class="control-label">Tetramestre</label>
                         <select class="control-select" id="semesterSelect">
-                            <option value="2024-I">2024 - Semestre I</option>
-                            <option value="2024-II">2024 - Semestre II</option>
-                            <option value="2025-I" selected>2025 - Semestre I</option>
+                            <option value="2024-I">2024 - Tetramestre I</option>
+                            <option value="2024-II">2024 - Tetramestre II</option>
+                            <option value="2025-I" selected>2025 - Tetramestre I</option>
                         </select>
                     </div>
                     <div class="control-group">
