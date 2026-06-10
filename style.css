@@ -382,3 +382,16 @@
     display: flex;
     overflow: hidden;
 }
+.un-logo-img {
+    width: 42px;      /* tamaño del logo */
+    height: 42px;
+    object-fit: contain;
+    margin-right: 12px; /* separación del texto */
+    margin-left: 8px;   /* margen izquierdo */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
