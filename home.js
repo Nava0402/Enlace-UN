@@ -31,35 +31,43 @@ const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
 
 applyTheme(initialTheme);
 
-themeToggle.addEventListener('click', () => {
-    const currentTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    applyTheme(currentTheme);
-    localStorage.setItem('theme', currentTheme);
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(currentTheme);
+        localStorage.setItem('theme', currentTheme);
+    });
+}
+
+// Selecciona todos los botones de tema oscuro
+document.querySelectorAll('.theme-toggle').forEach(btn => {
+    if (btn !== themeToggle) {
+        btn.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(currentTheme);
+            localStorage.setItem('theme', currentTheme);
+        });
+    }
 });
 
 function applyTheme(theme) {
     if (theme === 'dark') {
         body.setAttribute('data-theme', 'dark');
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        if (themeToggle) {
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        document.querySelectorAll('.theme-toggle').forEach(btn => {
+            btn.innerHTML = '<i class="fas fa-sun"></i>';
+        });
     } else {
         body.removeAttribute('data-theme');
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    }
-}
-
-// ============================================
-// NOTIFICACIONES
-// ============================================
-
-if (notificationBtn) {
-    notificationBtn.addEventListener('click', () => {
-        const badge = notificationBtn.querySelector('.badge');
-        if (badge) {
-            badge.textContent = '0';
-            badge.style.display = 'none';
+        if (themeToggle) {
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
         }
-        showToast('Notificaciones leídas');
-    });
+        document.querySelectorAll('.theme-toggle').forEach(btn => {
+            btn.innerHTML = '<i class="fas fa-moon"></i>';
+        });
+    }
 }
 
 // ============================================

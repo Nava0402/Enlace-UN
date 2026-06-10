@@ -97,3 +97,36 @@ document.addEventListener("DOMContentLoaded", () => {
 actualizarFechaHora();
 setInterval(actualizarFechaHora, 1000);
 });
+
+// ============================================
+// TEMA OSCURO / CLARO (Global)
+// ============================================
+
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const savedTheme = localStorage.getItem('theme');
+const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+applyTheme(initialTheme);
+
+// Selecciona todos los botones de tema oscuro
+document.querySelectorAll('.theme-toggle').forEach(themeToggle => {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(currentTheme);
+        localStorage.setItem('theme', currentTheme);
+    });
+});
+
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        document.body.setAttribute('data-theme', 'dark');
+        document.querySelectorAll('.theme-toggle').forEach(btn => {
+            btn.innerHTML = '<i class="fas fa-sun"></i>';
+        });
+    } else {
+        document.body.removeAttribute('data-theme');
+        document.querySelectorAll('.theme-toggle').forEach(btn => {
+            btn.innerHTML = '<i class="fas fa-moon"></i>';
+        });
+    }
+}

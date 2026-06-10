@@ -178,20 +178,19 @@ html, body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: transparent;
     border: none;
-    color: white;
+    color: var(--text-dark);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    font-size: 18px;
 }
 
 .logout-btn:hover {
-    background: var(--secondary-color);
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.4);
+    background: var(--bg-light);
 }
 
 .logout-btn:active {
@@ -470,16 +469,20 @@ html, body {
 
 [data-theme="dark"] .stat-card {
     background: #0b1b4d;
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--border-color);
 }
 
 [data-theme="dark"] .search-input {
     background: #1a2a4a;
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--border-color);
     color: #f5f7fb;
 }
 
 [data-theme="dark"] .icon-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .logout-btn:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 
@@ -1120,7 +1123,7 @@ html, body {
 [data-theme="dark"] .activities-widget,
 [data-theme="dark"] .notices-widget {
     background: #0b1b4d;
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--border-color)
 }
 
 [data-theme="dark"] .stat-card {
