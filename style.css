@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@400;500&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
-.root{font-family:'Inter',sans-serif;background:#f0f4f9;min-height:680px;display:flex;flex-direction:column}
+.root{font-family:'Inter',sans-serif;background:#f0f4f9;min-height:100vh;display:flex;flex-direction:column}
 
 /* TOP HEADER */
 .header{background:#1b2d5b;padding:0 32px;display:flex;align-items:stretch;justify-content:space-between;height:72px}
@@ -551,4 +551,58 @@
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+/* ============================================
+   DISEÑO RESPONSIVO (MÓVILES Y TABLETS)
+   ============================================ */
+@media screen and (max-width: 850px) {
+    /* Poner los paneles uno debajo del otro */
+    .body {
+        flex-direction: column;
+    }
+
+    /* Ajustar panel derecho (Formulario) para que tome todo el ancho */
+    .right-panel {
+        width: 100%;
+        padding: 40px 24px;
+        border-left: none; /* Quitamos el borde izquierdo */
+        border-top: 1px solid #e5eaf2; /* Lo pasamos arriba */
+    }
+
+    /* Ajustar panel izquierdo (Logo) */
+    .left-panel {
+        padding: 40px 24px;
+    }
+
+    /* Ajustar encabezado para que no se desborde */
+    .header {
+        padding: 15px 20px;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Ocultar elementos secundarios en celular para limpiar la vista */
+    .header-divider, 
+    .cambiando-tag, 
+    .visits-pill {
+        display: none;
+    }
+
+    /* Menú navegable con scroll lateral en móviles */
+    .nav {
+        padding: 0 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    /* Centrar texto y apilar el footer */
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 10px;
+    }
 }
