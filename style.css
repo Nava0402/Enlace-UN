@@ -717,3 +717,45 @@
 }
 [data-theme="dark"] .news-title { color: #f5f7fb; }
 [data-theme="dark"] .news-excerpt { color: #a8b4c5; }
+
+/* Asegura que el botón del dropdown se comporte igual que los otros botones */
+.dropdown .nav-btn {
+    background: transparent;
+    border: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo del contenedor de los enlaces */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1b2d5b; /* Azul oscuro igual a Conócenos */
+    min-width: 220px; /* Un poco más ancho para nombres largos como Prácticas Profesionales */
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+    z-index: 1000;
+    border-radius: 0 0 8px 8px; /* Redondeado solo abajo */
+    top: 100%;
+    left: 0;
+    border-top: 2px solid #c8102e; /* Línea roja decorativa superior */
+}
+
+/* Estilo de cada enlace dentro del menú */
+.dropdown-content a {
+    color: rgba(255,255,255,0.8);
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding-left: 25px; /* Efecto sutil de desplazamiento al pasar el mouse */
+}
