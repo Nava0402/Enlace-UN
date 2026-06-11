@@ -606,3 +606,114 @@
         gap: 10px;
     }
 }
+/* ============================================
+   SECCIÓN DE NOTICIAS
+   ============================================ */
+
+/* Contenedor principal de la página de noticias */
+.news-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Cuadrícula de tarjetas */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Tarjeta individual de noticia */
+.news-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+/* Contenedor de la imagen con efecto de recorte */
+.news-image-wrap {
+    width: 100%;
+    height: 200px;
+    overflow: hidden; /* Esto evita que la imagen se salga al hacer el zoom */
+}
+
+/* La imagen de la noticia con la animación al pasar el cursor */
+.news-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease; /* Tiempo de la animación */
+}
+
+.news-card:hover .news-image-wrap img {
+    transform: scale(1.08); /* Este es el efecto de movimiento/zoom */
+}
+
+/* Contenido de texto de la tarjeta */
+.news-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.news-date {
+    font-size: 11px;
+    color: #c8102e;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.news-title {
+    color: #1b2d5b;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.news-excerpt {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+    margin-top: auto;
+}
+
+/* Estilos específicos para la vista de la noticia abierta */
+.news-detail-image {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+/* Soporte Dark Mode para las Noticias */
+[data-theme="dark"] .news-card {
+    background: #0b1b4d;
+    border-color: rgba(255,255,255,0.1);
+}
+[data-theme="dark"] .news-title { color: #f5f7fb; }
+[data-theme="dark"] .news-excerpt { color: #a8b4c5; }
