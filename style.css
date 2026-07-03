@@ -65,7 +65,7 @@
 .glow-orb2{position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(200,16,46,0.1) 0%,transparent 70%);top:-50px;right:-30px;pointer-events:none}
 
 /* RIGHT PANEL */
-.right-panel{width:400px;background:#fff;display:flex;flex-direction:column;justify-content:center;padding:44px 40px;border-left:1px solid #e5eaf2}
+.right-panel{width:400px;background:#fff;display:flex;flex-direction:column;justify-content:center;padding:44px 40px;border-right:1px solid #e5eaf2}
 
 .login-top{margin-bottom:30px}
 .login-eyebrow{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#c8102e;margin-bottom:8px}
